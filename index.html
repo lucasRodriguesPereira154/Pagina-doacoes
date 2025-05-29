@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Doe para Ajudar o Próximo</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f7f7f7;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+      padding: 20px;
+      text-align: center;
+    }
+    .container {
+      background: #ffffff;
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      max-width: 400px;
+      width: 100%;
+    }
+    img {
+      max-width: 100%;
+      margin: 20px 0;
+    }
+    button {
+      padding: 10px 20px;
+      background-color: #4caf50;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+    .pix-key {
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Ajude o Próximo com sua Doação</h1>
+    <p>Sua contribuição faz a diferença na vida de muitas pessoas.</p>
+
+    <h3>Escaneie o QR Code Pix</h3>
+    <img src="https://gerarqrcodepix.com.br/api/v1?nome=Doacoes&cidade=Doacoes&chave=8ced25f6-b158-484b-9824-32d9d271e71c" alt="QR Code Pix">
+
+    <p class="pix-key" id="pix">Chave Pix: 8ced25f6-b158-484b-9824-32d9d271e71c</p>
+    <button onclick="copiarPix()">Copiar chave Pix</button>
+  </div>
+
+  <script>
+    function copiarPix() {
+      const texto = document.getElementById("pix").textContent.replace("Chave Pix: ", "");
+      navigator.clipboard.writeText(texto).then(() => alert("Chave Pix copiada!"));
+    }
+  </script>
+</body>
+</html>
